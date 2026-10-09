@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones y Solicitud de Tours | Conoce tu Tierra - Ecoturismo y Cultura de Honduras</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado-portal">
+        <h1>Reservaciones y Solicitud de Tours</h1>
+        <p class="eslogan">Conoce tu Tierra: solicita tu recorrido guiado por Honduras.</p>
+    </header>
+
+    
+    <nav class="menu-navegacion">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="destinos.html">Destinos y Rutas</a></li>
+            <li><a href="cultura.html">Cultura y Gastronomía</a></li>
+            <li><a href="reservaciones.html" class="activo">Reservaciones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor-formulario">
+        <h2>Solicitud de Tour o Recorrido </h2>
+        <p>Completa este formulario para solicitar tu paquete. Los campos marcados con asterisco (*) son obligatorios. Un asesor de turismo se comunicará contigo para confirmar disponibilidad y precio.</p>
+
+        <form action="https://conocetutierra.hn/api/reservaciones" method="POST" class="formulario-reserva">
+
+            
+            <fieldset>
+                <legend>1. Datos del Viajero Titular</legend>
+
+                <div class="campo-form">
+                    <label for="nombreViajero">Nombre Completo del Viajero Titular:*</label>
+                    <input type="text" id="nombreViajero" name="nombre" required minlength="6" maxlength="80" pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]+" placeholder="Ej: María Fernanda Castro Núñez" title="Solo letras y espacios, entre 6 y 80 caracteres">
+                </div>
+
+                <div class="campo-form">
+                    <label for="telefonoViajero">Número Telefónico:*</label>
+                    <input type="tel" id="telefonoViajero" name="telefono" required pattern="\+[0-9]{1,3} [0-9]{7,12}" placeholder="+504 99990000" title="Formato requerido: signo + con el código de país, un espacio y luego de 7 a 12 dígitos (ej: +504 99990000)">
+                </div>
+
+                <div class="campo-form">
+                    <label for="correoViajero">Correo Electrónico:*</label>
+                    <input type="email" id="correoViajero" name="correo" required placeholder="viajero@correo.com">
+                </div>
+            </fieldset>
+
+            
+            <fieldset>
+                <legend>2. Circuito Turístico y Fechas del Viaje</legend>
+
+                <div class="campo-form">
+                    <label for="circuito">Circuito o Destino Deseado:*</label>
+                    <select id="circuito" name="circuito" required>
+                        <option value="">-- Seleccione un circuito o destino --</option>
+                        <option value="circuito-maya">Circuito completo: Ruta Maya y Arqueología</option>
+                        <option value="circuito-lenca">Circuito completo: Ruta Lenca y Pueblos con Encanto</option>
+                        <option value="circuito-yojoa">Circuito completo: Ruta del Lago de Yojoa y las Cascadas</option>
+                        <option value="circuito-pacifico">Circuito completo: Ruta del Pacífico y Golfo de Fonseca</option>
+                        <option value="copan">Destino: Parque Arqueológico de Copán Ruinas</option>
+                        <option value="naranjos">Destino: Parque Eco-Arqueológico Los Naranjos</option>
+                        <option value="gracias">Destino: Gracias, Lempira</option>
+                        <option value="esperanza">Destino: La Esperanza e Intibucá</option>
+                        <option value="yojoa">Destino: Lago de Yojoa</option>
+                        <option value="pulhapanzak">Destino: Cataratas de Pulhapanzak</option>
+                        <option value="amapala">Destino: Isla del Tigre (Amapala)</option>
+                        <option value="cedeno">Destino: Playa de Cedeño</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="fechaInicio">Fecha Prevista de Inicio:*</label>
+                    <input type="date" id="fechaInicio" name="fecha_inicio" required min="2026-10-09" max="2027-12-31">
+                </div>
+
+                <div class="campo-form">
+                    <label for="fechaRetorno">Fecha Prevista de Retorno:*</label>
+                    <input type="date" id="fechaRetorno" name="fecha_retorno" required min="2026-10-09" max="2027-12-31">
+                </div>
+            </fieldset>
+
+           
+            <fieldset>
+                <legend>3. Visitantes y Tipo de Hospedaje</legend>
+
+                <div class="campo-form">
+                    <label for="adultos">Número de Adultos (18 años o más):*</label>
+                    <input type="number" id="adultos" name="adultos" required min="1" max="20" value="1" title="Indique entre 1 y 20 adultos">
+                </div>
+
+                <div class="campo-form">
+                    <label for="menores">Número de Menores de Edad:*</label>
+                    <input type="number" id="menores" name="menores" required min="0" max="15" value="0" title="Indique entre 0 y 15 menores">
+                </div>
+
+                <div class="campo-form">
+                    <p><strong>Nivel de Servicio o Tipo de Hospedaje (Selección única):*</strong></p>
+                   
+                    <label><input type="radio" name="hospedaje" value="cabana-ecologica" required> Cabaña ecológica</label><br>
+                    <label><input type="radio" name="hospedaje" value="hotel-colonial"> Hotel colonial</label><br>
+                    <label><input type="radio" name="hospedaje" value="campamento-montana"> Campamento de montaña</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Atención Especial y Compromisos de Conservación</legend>
+
+                <div class="campo-form">
+                    <p><strong>Necesidades de Accesibilidad o Servicios Adicionales (Selecciona los que necesites):</strong></p>
+                    <label><input type="checkbox" name="necesidades" value="guia-bilingue"> Guía bilingüe (español - inglés)</label><br>
+                    <label><input type="checkbox" name="necesidades" value="movilidad-reducida"> Acceso para movilidad reducida o silla de ruedas</label><br>
+                    <label><input type="checkbox" name="necesidades" value="apoyo-sensorial"> Apoyo para discapacidad visual o auditiva</label>
+                </div>
+
+                <div class="campo-form">
+                    <label for="detalles">Detalles Adicionales o Solicitudes Especiales:</label>
+                    <textarea id="detalles" name="detalles" rows="4" maxlength="300" placeholder="Alergias, alimentación especial, celebraciones, otras necesidades..."></textarea>
+                </div>
+
+                <div class="campo-form">
+                    <label>
+                        <input type="checkbox" name="acepto_conservacion" required>
+                        Me comprometo a respetar las normas de conservación ecológica de las áreas protegidas y a proteger el patrimonio histórico y cultural de Honduras durante mi recorrido.*
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="acciones-form">
+                <button type="submit" class="btn-primario">Solicitar Reservación</button>
+                <button type="reset" class="btn-secundario">Limpiar Formulario</button>
+            </div>
+        </form>
+    </main>
+
+   
+    <aside class="barra-lateral">
+        <h3>Antes de reservar</h3>
+        <ul>
+            <li><strong>Anticipación:</strong> Solicita tu tour con al menos 7 días de anticipación.</li>
+            <li><strong>Menores de edad:</strong> Deben viajar acompañados por un adulto responsable.</li>
+            <li><strong>Áreas protegidas:</strong> No se permite dejar basura ni extraer plantas, animales o piezas arqueológicas.</li>
+            <li><strong>Confirmación:</strong> Recibirás la respuesta por correo electrónico o teléfono.</li>
+        </ul>
+    </aside>
+
+
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Conoce tu Tierra - Portal Digital de Ecoturismo y Cultura de Honduras. Todos los derechos reservados.</p>
+        <p>Programación Web | María Fernanda Castro Nuñez | Cuenta: 20231031477</p>
+    </footer>
+</body>
+</html>
