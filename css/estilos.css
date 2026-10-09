@@ -88,7 +88,7 @@ figure {
 .menu-navegacion a {
     display: inline-block;
     margin: 0 0.25rem;
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 1rem;
     color: var(--color-oscuro);
     font-weight: 600;
     text-decoration: none;
