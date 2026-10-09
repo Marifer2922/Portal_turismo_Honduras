@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <!-- Encabezado institucional -->
+    
     <header class="encabezado-portal">
         <h1>Contacto y Asistencia al Turista</h1>
         <p class="eslogan">Conoce tu Tierra: estamos para ayudarte antes, durante y después de tu viaje.</p>
     </header>
 
-    <!-- Barra de navegación compartida -->
+    
     <nav class="menu-navegacion">
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -26,7 +26,7 @@
 
     <main class="contenido-principal">
 
-        <!-- Introducción e índice de la página -->
+        
         <section id="introduccion" class="seccion-intro">
             <h2>¿En qué podemos ayudarte?</h2>
             <p>Encuentra la oficina de información turística más cercana, los números de emergencia, nuestros canales digitales y un formulario para enviarnos tus consultas o comentarios.</p>
@@ -38,7 +38,7 @@
             </ul>
         </section>
 
-        <!-- ===== OFICINAS Y MAPA ===== -->
+        
         <section id="oficinas" class="seccion-oficinas">
             <h2>Oficinas de información turística</h2>
             <p>Visítanos en los principales polos urbanos y turísticos del país.</p>
@@ -93,12 +93,11 @@
             </table>
 
             <figure>
-                <img src="img/mapa-honduras.webp" alt="Mapa esquemático de Honduras con la ubicación de las oficinas en Tegucigalpa, San Pedro Sula, La Ceiba, Copán Ruinas y Roatán" width="500" height="350">
+                <img src="img/mapaHonduras.jpg" alt="Mapa esquemático de Honduras con la ubicación de las oficinas en Tegucigalpa, San Pedro Sula, La Ceiba, Copán Ruinas y Roatán" width="500" height="350">
                 <figcaption>Mapa esquemático de las oficinas de información turística</figcaption>
             </figure>
         </section>
 
-        <!-- ===== EMERGENCIAS Y ASISTENCIA VIAL ===== -->
         <section id="emergencias" class="seccion-emergencias">
             <h2>Teléfonos de emergencia y asistencia vial</h2>
 
@@ -146,7 +145,7 @@
             </table>
         </section>
 
-        <!-- ===== CORREO Y CANALES DIGITALES ===== -->
+
         <section id="canales" class="seccion-canales">
             <h2>Correo y canales digitales</h2>
 
@@ -167,14 +166,14 @@
             </article>
         </section>
 
-        <!-- ===== FORMULARIO SECUNDARIO ===== -->
+    
         <section id="formulario-consultas" class="contenedor-formulario">
             <h2>Consultas, comentarios y solicitudes de asistencia</h2>
             <p>Escríbenos tu consulta, comentario o solicitud. Los campos marcados con asterisco (*) son obligatorios.</p>
 
-            <form action="https://conocetutierra.hn/api/consultas" method="POST" class="formulario-consulta">
+            <form action="https://conocetutierra.hn/api/consultas" method="POST" enctype="multipart/form-data" class="formulario-consulta"></form>
 
-                <!-- BLOQUE 1: DATOS DE CONTACTO -->
+               
                 <fieldset>
                     <legend>1. Tus Datos de Contacto</legend>
 
@@ -194,7 +193,6 @@
                     </div>
                 </fieldset>
 
-                <!-- BLOQUE 2: TU MENSAJE -->
                 <fieldset>
                     <legend>2. Tu Mensaje</legend>
 
@@ -243,7 +241,7 @@
 
     </main>
 
-    <!-- Pie de página institucional -->
+
     <footer class="pie-pagina">
         <p>&copy; 2026 Conoce tu Tierra - Portal Digital de Ecoturismo y Cultura de Honduras. Todos los derechos reservados.</p>
         <p>Programación Web | María Fernanda Castro Nuñez | Cuenta: 20231031477</p>
